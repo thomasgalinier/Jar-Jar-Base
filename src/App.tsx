@@ -1,16 +1,14 @@
-import {BrowserRouter, Route, Routes} from "react-router";
-import Home from "./pages/home.tsx";
-
+import { BrowserRouter, Route, Routes } from 'react-router';
+import Home from './pages/home.tsx';
 
 function App() {
-
   return (
-      <BrowserRouter>
-          <Routes>
-              <Route path='/' element={<Home />} />
-          </Routes>
-      </BrowserRouter>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
