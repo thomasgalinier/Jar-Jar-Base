@@ -1,6 +1,8 @@
 import type { TCharacter } from '../services/types/characters.ts';
 import { Calendar, Ruler, User } from 'lucide-react';
+import { useNavigate } from 'react-router';
 export default function CardCharacter({ searchResult }: { searchResult: TCharacter }) {
+  const navigate = useNavigate();
   const format = (value: string) => {
     if (value === 'unknown') return '-';
     return value;
@@ -8,7 +10,7 @@ export default function CardCharacter({ searchResult }: { searchResult: TCharact
   return (
     <div
       className="bg-gray-900 text-amber-50 border border-gray-600 p-4 rounded-sm shadow-md p-6 max-w-sm w-full shadow-md  text-sm hover:border-amber-400 cursor-pointer transition:all duration-200 hover:scale-110"
-      onClick={() => console.log('toto')}
+      onClick={() => navigate(`/characters/${searchResult.url.split('/').slice(-2, -1)[0]}`)}
     >
       <div className="flex flex-col gap-2">
         <div className="flex justify-between gap-6">

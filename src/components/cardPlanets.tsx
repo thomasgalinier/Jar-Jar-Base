@@ -1,31 +1,15 @@
 import type { TPlanet } from '../services/types/planets.ts';
 import { Globe, Mountain, Users } from 'lucide-react';
+import { format, formatDiameter, formatPopulation } from '../services/tools.ts';
+import { useNavigate } from 'react-router';
 
 export default function CardPlanets({ searchResult }: { searchResult: TPlanet }) {
-  const formatPopulation = (population: string) => {
-    if (population === 'unknown') return '-';
-    const num = parseInt(population);
-    if (num >= 1000000000) {
-      return `${(num / 1000000000).toFixed(1)}B`;
-    } else if (num >= 1000000) {
-      return `${(num / 1000000).toFixed(1)}M`;
-    } else if (num >= 1000) {
-      return `${(num / 1000).toFixed(1)}K`;
-    }
-    return population;
-  };
-  const formatDiameter = (diameter: string) => {
-    if (diameter === 'unknown') return '-';
-    return `${parseInt(diameter).toLocaleString()} km`;
-  };
-  const format = (value: string) => {
-    if (value === 'unknown') return '-';
-    return value;
-  };
+  const navigate = useNavigate();
+
   return (
     <div
       className="bg-gray-900 text-amber-50 border border-gray-600 p-4 rounded-sm shadow-md p-6 max-w-sm w-full shadow-md  text-sm hover:border-amber-400 cursor-pointer transition:all duration-200 hover:scale-110"
-      onClick={() => console.log('toto')}
+      onClick={() => navigate(`/planet/${searchResult.url.split('/').slice(-2, -1)[0]}`)}
     >
       <div className="flex flex-col gap-2">
         <div className="flex items-center gap-2">
