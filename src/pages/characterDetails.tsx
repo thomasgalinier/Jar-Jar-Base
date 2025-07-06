@@ -32,9 +32,9 @@ export default function CharacterDetails() {
   }
 
   return (
-    <main className="w-full h-screen bg-[url('./assets/img.png')]">
+    <main className="w-full h-screen h-full bg-[url('./assets/img.png')]">
       <Header />
-      <div className="px-4">
+      <div className="px-4 ">
         <div className="flex items-center justify-center gap-6">
           <h1 className="text-amber-500 text-7xl py-4 flex">{character?.name}</h1>
           <div
@@ -43,8 +43,8 @@ export default function CharacterDetails() {
             {character?.gender}
           </div>
         </div>
-        <div className="flex justify-around flex-wrap ">
-          <div className="flex flex-col gap-4 w-1/4">
+        <div className="flex justify-around flex-wrap w-full gap-2">
+          <div className="flex flex-col gap-4">
             <CardDetails icon={<Heart />} title="Physical Characteristics">
               <div className="flex flex-col gap-4">
                 <DetailsPhysical
@@ -84,7 +84,7 @@ export default function CharacterDetails() {
               </div>
             </CardDetails>
           </div>
-          <div className="flex w-1/4">
+          <div className="flex">
             <CardDetails icon={<Film />} title="Galactic presence">
               <div className="flex gap-4 flex-wrap">
                 <DetailsPresence
@@ -114,7 +114,7 @@ export default function CharacterDetails() {
               </div>
             </CardDetails>
           </div>
-          <div className=" w-1/4">
+          <div >
             <CardDetails icon={<Info />} title="Metadata">
               <div className="flex gap-4 flex-col">
                 <DetailsMetadata

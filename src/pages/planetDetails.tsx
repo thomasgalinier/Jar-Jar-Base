@@ -28,9 +28,10 @@ export default function PlanetDetails() {
   return (
     <main className="w-full h-screen bg-[url('./assets/img.png')]">
       <Header />
-      <div className="px-4 flex justify-around">
-        <h1>Planet Details</h1>
-        <div className="w-1/4 flex flex-col gap-4">
+      <div className="flex flex-col items-center justify-center gap-6 px-4">
+        <h1 className="text-amber-500 text-7xl py-4 flex">{planet?.name}</h1>
+      <div className="px-4 flex justify-around w-full flex-wrap">
+        <div className="flex flex-col gap-4">
           <CardDetails icon={<Heart />} title="Physical Characteristics">
             <div className="flex flex-col gap-4">
               <DetailsPhysical
@@ -74,7 +75,7 @@ export default function PlanetDetails() {
             </div>
           </div>
         </div>
-        <div className="w-1/4 flex flex-col gap-4">
+        <div className=" flex flex-col gap-4">
           <CardDetails icon={<Clock />} title="Cycles">
             <div className="flex flex-col gap-4">
               <DetailsPhysical
@@ -106,7 +107,7 @@ export default function PlanetDetails() {
             </div>
           </CardDetails>
         </div>
-        <div className="w-1/4 flex flex-col gap-4">
+        <div className="flex flex-col gap-4">
           <CardDetails icon={<Info />} title="Metadata">
             <div className="flex flex-col gap-4">
               <DetailsMetadata
@@ -127,6 +128,7 @@ export default function PlanetDetails() {
             </div>
           </CardDetails>
         </div>
+      </div>
       </div>
     </main>
   );
